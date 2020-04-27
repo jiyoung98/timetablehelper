@@ -43,197 +43,608 @@
         font-family: "Do Hyeon", sans-serif;
       }
       .logo {
-          width: 500px;
-          height: auto;
-          display: block;
-          margin: 0 auto;
+        width: 500px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
       }
       .go_timetable {
-          width: 500px;
-          height: auto;
-          display: block;
-          margin: 0 auto;
+        width: 500px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
       }
-      .custom-select{
-          width: 300px;
-          height: auto;
+      .custom-select {
+        width: 300px;
+        height: auto;
       }
     </style>
 
     <script>
-        function q1() {
-            $("#go_timetable").hide();
-            $("").show();
+      function q1() {
+        $("#go_timetable").hide();
+        $("").show();
+      }
+
+      function category_change(e) {
+        var select_box2_1 = [
+          "채플",
+          "기독교의이해",
+          "글쓰기",
+          "(~2019학번)대학영어",
+        ];
+        var select_box2_2 = [
+          "문학과예술",
+          "인간과역사",
+          "언어와표현",
+          "가치와윤리",
+          "국가와사회",
+          "지역과세계",
+          "논리와수리",
+          "자연과우주",
+          "생명과환경",
+          "정보와기술",
+          "체육과건강",
+        ];
+        var select_box2_3 = ["자율선택"];
+        var select_box2_4 = ["채플", "기독교의이해", "대학영어", "글쓰기"];
+        var select_box2_5 = [
+          "문학과예술",
+          "인간과역사",
+          "언어와표현",
+          "가치와윤리",
+          "국가와사회공동체",
+          "지역사회와세계",
+          "논리와수리",
+          "자연과우주",
+          "생명과환경",
+          "소프트웨어",
+        ];
+        var select_box2_6 = [
+          "역사,철학 영역",
+          "사회,윤리 영역",
+          "인문,예술 영역",
+          "세계문화,언어 영역",
+          "생활,건강 영역",
+        ];
+        var select_box2_7 = [
+          "문과대학 공통",
+          "국어국문학전공",
+          "사학전공",
+          "철학전공",
+          "문헌정보학전공",
+          "심리학전공",
+          "중어중문학전공",
+          "영어영문학전공",
+          "독어독문학전공",
+          "불어불문학전공",
+          "노어노문학전공",
+        ];
+        var select_box2_8 = ["상경대학공통", "경제학전공", "응용통계학전공"];
+        var select_box2_9 = ["경영학전공"];
+        var select_box2_10 = [
+          "이과대학공통",
+          "수학전공",
+          "물리학전공",
+          "화학전공",
+          "지구시스템과학전공",
+          "천문우주학전공",
+          "대기과학전공",
+        ];
+        var select_box2_11 = [
+          "공과대학공통",
+          "화공생명공학전공",
+          "전기전자공학전공",
+          "건축공학전공",
+          "건축학(설계)",
+          "도시공학전공",
+          "건설환경공학전공",
+          "기계공학전공",
+          "신소재공학전공",
+          "산업공학전공",
+          "컴퓨터과학전공",
+          "IT융합공학전공",
+        ];
+        var select_box2_12 = [
+          "생명시스템공통",
+          "시스템생물학전공",
+          "생화학전공",
+          "생명공학전공",
+        ];
+        var select_box2_13 = ["신학과"];
+        var select_box2_14 = [
+          "사회과학대학공통",
+          "정치외교학전공",
+          "행정학전공",
+          "사회복지학전공",
+          "사회학전공",
+          "문화인류학전공",
+          "언론홍보영상학부",
+        ];
+        var select_box2_15 = [
+          "음악대학공통",
+          "교회음악전공",
+          "성악전공",
+          "피아노전공",
+          "관현악전공",
+          "작곡전공",
+        ];
+        var select_box2_16 = [
+          "의류환경학전공",
+          "식품영양학전공",
+          "실내건축학전공",
+          "아동가족전공",
+          "생활디자인전공",
+        ];
+        var select_box2_17 = [
+          "교육학전공",
+          "체육교육학전공",
+          "스포츠응용산업전공",
+        ];
+        var select_box2_18 = [
+          "공통교과과정(신촌)",
+          "공통교과과정(국제)",
+          "언더우드학부(인문사회)-비교문학과문화",
+          "언더우드학부(인문사회)-경제학",
+          "언더우드학부(인문사회)-국제학",
+          "언더우드학부(인문사회)-정치외교학",
+          "언더우드학부(공학)-생명과학공학",
+          "아시아학부-아시아학",
+          "테크노아트학부-정보,인터랙션디자인",
+          "테크노아트학부-창의기술경영",
+          "테크노아트학부-문화디자인경영",
+          "융합사회과학부-사회정의리더십",
+          "융합사회과학부-계량위험관리",
+          "융합사회과학부-과학기술정책",
+          "융합사회과학부-지속개발협력",
+          "융합과학공학부-나노과학공학",
+          "융합과학공학부-에너지환경융합",
+          "융합과학공학부-바이오융합",
+        ];
+        var select_box2_19 = ["약학전공"];
+        var select_box2_20 = [
+          "GLC공통교과과정",
+          "GLD공통교과과정",
+          "글로벌인재학부-국제통상전공",
+          "글로벌인재학부-한국문화전공",
+          "글로벌인재학부-한국언어문화교육전공",
+          "글로벌인재학부-문화,미디어전공",
+          "글로벌인재학부-바이오생활공학전공",
+          "글로벌인재학부-응용정보공학전공",
+        ];
+        var select_box2_21 = [
+          "유럽지역학",
+          "디지털예술학",
+          "미국학",
+          "한국및동아시아학(중국학)",
+          "한국및동아시아학(한국학)",
+          "한국및동아시아학(일본학)",
+          "외교통상학",
+          "인지과학",
+          "벤처학",
+          "리더십",
+          "한국및동아시아학(동아시아학)",
+          "비교문학",
+          "문화비평학",
+        ];
+        var select_box2_22 = [
+          "교양기초-채플",
+          "교양기초-기독교의이해",
+          "교양기초-글쓰기",
+          "대학교양-문학과예술",
+          "대학교양-인간과역사",
+          "대학교양-언어와표현",
+          "대학교양-가치와윤리",
+          "대학교양-국가와사회",
+          "대학교양-지역과세계",
+          "대학교양-논리와수리",
+          "대학교양-자연과우주",
+          "대학교양-생명과환경",
+          "대학교양-정보와기술",
+          "대학교양-체육과건강",
+          "기초교육-SE",
+          "기초교육-YONSEI RC 101",
+          "기초교육-RC운영교과",
+          "기초교육-자율선택",
+          "전공",
+          "의예과(1학년)",
+          "치의예과(1학년)",
+          "간호(1학년)",
+          "(~2019학번)교양기초-대학영어",
+        ];
+        var select_box2_23 = [
+          "공통기초-채플",
+          "공통기초-기독교의이해",
+          "공통기초-글쓰기",
+          "필수교양-문학과예술",
+          "필수교양-인간과역사",
+          "필수교양-언어와표현",
+          "필수교양-가치와윤리",
+          "필수교양-국가와사회공동체",
+          "필수교양-지역사회와세계",
+          "필수교양-논리와수리",
+          "필수교양-자연과우주",
+          "필수교양-생명과환경",
+          "필수교양-소프트웨어",
+          "선택교양-일반",
+          "선택교양-RC SE(HE1)",
+          "선택교양-RC HE2",
+          "선택교양-RC HE3",
+          "선택교양-YONSEI RC 101",
+          "선택교양-RC 기타",
+          "전공",
+        ];
+        var select_box2_24 = ["군사학"];
+        var select_box2_25 = ["교직과정"];
+        var select_box2_26 = ["의학전공", "의예과"];
+        var select_box2_27 = ["치의학전공", "치의예과"];
+        var select_box2_28 = ["간호학(2-4학년)", "RN-BSN"];
+        var select_box2_29 = ["평생교육사과정"];
+        var select_box2_30 = ["Undergraduate", "Graduate", "Korean Language"];
+        var target = document.getElementById("select_box2");
+
+        if (e.value == "1") var d = select_box2_1;
+        // for문?
+        else if (e.value == "2") var d = select_box2_2;
+        else if (e.value == "3") var d = select_box2_3;
+        else if (e.value == "4") var d = select_box2_4;
+        else if (e.value == "5") var d = select_box2_5;
+        else if (e.value == "6") var d = select_box2_6;
+        else if (e.value == "7") var d = select_box2_7;
+        else if (e.value == "8") var d = select_box2_8;
+        else if (e.value == "9") var d = select_box2_9;
+        else if (e.value == "10") var d = select_box2_10;
+        else if (e.value == "11") var d = select_box2_11;
+        else if (e.value == "12") var d = select_box2_12;
+        else if (e.value == "13") var d = select_box2_13;
+        else if (e.value == "14") var d = select_box2_14;
+        else if (e.value == "15") var d = select_box2_15;
+        else if (e.value == "16") var d = select_box2_16;
+        else if (e.value == "17") var d = select_box2_17;
+        else if (e.value == "18") var d = select_box2_18;
+        else if (e.value == "19") var d = select_box2_19;
+        else if (e.value == "20") var d = select_box2_20;
+        else if (e.value == "21") var d = select_box2_21;
+        else if (e.value == "22") var d = select_box2_22;
+        else if (e.value == "23") var d = select_box2_23;
+        else if (e.value == "24") var d = select_box2_24;
+        else if (e.value == "25") var d = select_box2_25;
+        else if (e.value == "26") var d = select_box2_26;
+        else if (e.value == "27") var d = select_box2_27;
+        else if (e.value == "28") var d = select_box2_28;
+        else if (e.value == "29") var d = select_box2_29;
+        else if (e.value == "30") var d = select_box2_30;
+
+        target.options.length = 0;
+
+        for (x in d) {
+          var opt = document.createElement("option");
+          opt.value = d[x];
+          opt.innerHTML = d[x];
+          target.appendChild(opt);
         }
-        
-        function category_change(e){
-            var select_box2_1 = ["채플", "기독교의이해", "글쓰기", "(~2019학번)대학영어"];
-	var select_box2_2 = ["문학과예술", "인간과역사", "언어와표현", "가치와윤리", "국가와사회", "지역과세계", "논리와수리", "자연과우주", "생명과환경", "정보와기술", "체육과건강"];
-	var select_box2_3 = ["자율선택"];
-    var select_box2_4 = ["채플", "기독교의이해", "대학영어", "글쓰기"];
-    var select_box2_5 = ["문학과예술", "인간과역사", "언어와표현", "가치와윤리", "국가와사회공동체", "지역사회와세계", "논리와수리", "자연과우주", "생명과환경", "소프트웨어"];
-    var select_box2_6 = ["역사,철학 영역", "사회,윤리 영역", "인문,예술 영역", "세계문화,언어 영역", "생활,건강 영역"];
-    var select_box2_7 = ["문과대학 공통","국어국문학전공","사학전공","철학전공","문헌정보학전공","심리학전공", "중어중문학전공","영어영문학전공","독어독문학전공","불어불문학전공","노어노문학전공"];
-    var select_box2_8 = ["상경대학공통","경제학전공","응용통계학전공"];
-    var select_box2_9 = ["경영학전공"];
-    var select_box2_10 = ["이과대학공통","수학전공","물리학전공","화학전공","지구시스템과학전공","천문우주학전공","대기과학전공"];
-    var select_box2_11 = ["공과대학공통","화공생명공학전공","전기전자공학전공","건축공학전공","건축학(설계)","도시공학전공","건설환경공학전공","기계공학전공","신소재공학전공","산업공학전공","컴퓨터과학전공","IT융합공학전공"];
-    var select_box2_12 = ["생명시스템공통","시스템생물학전공","생화학전공","생명공학전공"];
-    var select_box2_13 = ["신학과"];
-    var select_box2_14 = ["사회과학대학공통","정치외교학전공","행정학전공","사회복지학전공","사회학전공","문화인류학전공","언론홍보영상학부"];
-    var select_box2_15 = ["음악대학공통","교회음악전공","성악전공","피아노전공","관현악전공","작곡전공"];
-    var select_box2_16 = ["의류환경학전공","식품영양학전공","실내건축학전공","아동가족전공","생활디자인전공"];
-    var select_box2_17 = ["교육학전공","체육교육학전공","스포츠응용산업전공"];
-    var select_box2_18 = ["공통교과과정(신촌)","공통교과과정(국제)","언더우드학부(인문사회)-비교문학과문화","언더우드학부(인문사회)-경제학","언더우드학부(인문사회)-국제학","언더우드학부(인문사회)-정치외교학","언더우드학부(공학)-생명과학공학","아시아학부-아시아학","테크노아트학부-정보,인터랙션디자인","테크노아트학부-창의기술경영","테크노아트학부-문화디자인경영","융합사회과학부-사회정의리더십","융합사회과학부-계량위험관리","융합사회과학부-과학기술정책","융합사회과학부-지속개발협력","융합과학공학부-나노과학공학","융합과학공학부-에너지환경융합","융합과학공학부-바이오융합"];
-    var select_box2_19 = ["약학전공"];
-    var select_box2_20 = ["GLC공통교과과정","GLD공통교과과정","글로벌인재학부-국제통상전공","글로벌인재학부-한국문화전공","글로벌인재학부-한국언어문화교육전공","글로벌인재학부-문화,미디어전공","글로벌인재학부-바이오생활공학전공","글로벌인재학부-응용정보공학전공"];
-    var select_box2_21 = ["유럽지역학","디지털예술학","미국학","한국및동아시아학(중국학)","한국및동아시아학(한국학)","한국및동아시아학(일본학)","외교통상학","인지과학","벤처학","리더십","한국및동아시아학(동아시아학)","비교문학","문화비평학"];
-    var select_box2_22 = ["교양기초-채플","교양기초-기독교의이해","교양기초-글쓰기","대학교양-문학과예술","대학교양-인간과역사","대학교양-언어와표현","대학교양-가치와윤리","대학교양-국가와사회","대학교양-지역과세계","대학교양-논리와수리","대학교양-자연과우주","대학교양-생명과환경","대학교양-정보와기술","대학교양-체육과건강","기초교육-SE","기초교육-YONSEI RC 101","기초교육-RC운영교과","기초교육-자율선택","전공","의예과(1학년)","치의예과(1학년)","간호(1학년)","(~2019학번)교양기초-대학영어"];
-    var select_box2_23 = ["공통기초-채플","공통기초-기독교의이해","공통기초-글쓰기","필수교양-문학과예술","필수교양-인간과역사","필수교양-언어와표현","필수교양-가치와윤리","필수교양-국가와사회공동체","필수교양-지역사회와세계","필수교양-논리와수리","필수교양-자연과우주","필수교양-생명과환경","필수교양-소프트웨어","선택교양-일반","선택교양-RC SE(HE1)","선택교양-RC HE2","선택교양-RC HE3","선택교양-YONSEI RC 101","선택교양-RC 기타","전공"];
-    var select_box2_24 = ["군사학"];
-    var select_box2_25 = ["교직과정"];
-    var select_box2_26 = ["의학전공","의예과"];
-    var select_box2_27 = ["치의학전공","치의예과"];
-    var select_box2_28 = ["간호학(2-4학년)","RN-BSN"];
-    var select_box2_29 = ["평생교육사과정"];
-    var select_box2_30 = ["Undergraduate","Graduate","Korean Language"];
-    var target = document.getElementById("select_box2");
-    
-    if(e.value == "1") var d = select_box2_1;
-    // for문?
-    else if(e.value == "2") var d = select_box2_2;
-    else if(e.value == "3") var d = select_box2_3;
-    else if(e.value == "4") var d = select_box2_4;
-    else if(e.value == "5") var d = select_box2_5;
-    else if(e.value == "6") var d = select_box2_6;
-    else if(e.value == "7") var d = select_box2_7;
-    else if(e.value == "8") var d = select_box2_8;
-    else if(e.value == "9") var d = select_box2_9;
-    else if(e.value == "10") var d = select_box2_10;
-    else if(e.value == "11") var d = select_box2_11;
-    else if(e.value == "12") var d = select_box2_12;
-    else if(e.value == "13") var d = select_box2_13;
-    else if(e.value == "14") var d = select_box2_14;
-    else if(e.value == "15") var d = select_box2_15;
-    else if(e.value == "16") var d = select_box2_16;
-    else if(e.value == "17") var d = select_box2_17;
-    else if(e.value == "18") var d = select_box2_18;
-    else if(e.value == "19") var d = select_box2_19;
-    else if(e.value == "20") var d = select_box2_20;
-    else if(e.value == "21") var d = select_box2_21;
-    else if(e.value == "22") var d = select_box2_22;
-    else if(e.value == "23") var d = select_box2_23;
-    else if(e.value == "24") var d = select_box2_24;
-    else if(e.value == "25") var d = select_box2_25;
-    else if(e.value == "26") var d = select_box2_26;
-    else if(e.value == "27") var d = select_box2_27;
-    else if(e.value == "28") var d = select_box2_28;
-    else if(e.value == "29") var d = select_box2_29;
-    else if(e.value == "30") var d = select_box2_30;
-    
-    target.options.length = 0;
+      }
 
-	for (x in d) {
-		var opt = document.createElement("option");
-		opt.value = d[x];
-		opt.innerHTML = d[x];
-		target.appendChild(opt);
-	}	
-        }
-
-
-      function q2() {
-        $("#names-q1").html("");
+      function listing() {
         $.ajax({
           type: "GET",
-          url:
-            "http://ysweb.yonsei.ac.kr:8888/DataAgent?pgm=/curri120601/curri_Data&DmlGb=get_list&ocode0=s1&ocode1=s1100100H1&s2=all&schHakjum=all&hy=2020&hg=1&lang=0&filterscount=0&groupscount=0&pagenum=0&pagesize=15&recordstartindex=0&recordendindex=32.64&_=1586437431115",
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader(
-              "Referer",
-              "http://ysweb.yonsei.ac.kr:8888/curri120601/curri_new.jsp"
-            );
-          },
+          url: "/schedules",
           data: {},
           success: function (response) {
-            let datas = response["Data"];
-            for (let i = 0; i < datas.length; i++) {
-              let subject_name = datas[i]["KNA"];
-              let subject_prof = datas[i]["PROF"];
-              let subject_time = datas[i]["TIME"];
-              let subject_room = datas[i]["ROOM"];
-              let subject_number = datas[i]["HAKBB"];
-              let subject_hakjum = datas[i]["HAKJUM"];
-              let temp_html =
-                "<li>" +
-                subject_name +
-                " - " +
-                subject_prof +
-                " - " +
-                subject_time +
-                " - " +
-                subject_room +
-                " - " +
-                subject_number +
-                " - " +
-                subject_hakjum +
-                "</li>";
-              $("#names-q1").append(temp_html);
+            if (response["result"] == "success") {
+              var schedules = response["schedules"];
+              var input01 = $("#select_box1").val();
+              var input02 = $("#select_box2").val();
+
+              for (let i = 0; i < schedules.length; i++) {
+                if (
+                  schedules[i]["ocode1"] == "s1100100H1" &&
+                  schedules[i]["oname2"] == "채플"
+                ) {
+                  if (schedules1 == undefined) {
+                    var schedules1 = [];
+                    schedules1.push(schedules[i]);
+                  } else {
+                    schedules1.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100100H1" &&
+                  schedules[i]["oname2"] == "기독교의이해"
+                ) {
+                  if (schedules2 == undefined) {
+                    var schedules2 = [];
+                    schedules2.push(schedules[i]);
+                  } else {
+                    schedules2.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100100H1" &&
+                  schedules[i]["oname2"] == "글쓰기"
+                ) {
+                  if (schedules3 == undefined) {
+                    var schedules3 = [];
+                    schedules3.push(schedules[i]);
+                  } else {
+                    schedules3.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100100H1" &&
+                  schedules[i]["oname2"] == "(~2019학번)대학영어"
+                ) {
+                  if (schedules4 == undefined) {
+                    var schedules4 = [];
+                    schedules4.push(schedules[i]);
+                  } else {
+                    schedules4.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "문학과예술"
+                ) {
+                  if (schedules5 == undefined) {
+                    var schedules5 = [];
+                    schedules5.push(schedules[i]);
+                  } else {
+                    schedules5.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "인간과역사"
+                ) {
+                  if (schedules6 == undefined) {
+                    var schedules6 = [];
+                    schedules6.push(schedules[i]);
+                  } else {
+                    schedules6.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "언어와표현"
+                ) {
+                  if (schedules7 == undefined) {
+                    var schedules7 = [];
+                    schedules7.push(schedules[i]);
+                  } else {
+                    schedules7.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "가치와윤리"
+                ) {
+                  if (schedules8 == undefined) {
+                    var schedules8 = [];
+                    schedules8.push(schedules[i]);
+                  } else {
+                    schedules8.push(schedules[i]);
+                  }
+                }
+              }
+
+              for (let j = 0; j < schedules.length; j++) {
+                if (input01 == 1) {
+                  if (input02 == "채플") {
+                    make_card(
+                      schedules1[j]["kna"],
+                      schedules1[j]["hakbb"],
+                      schedules1[j]["hakjum"],
+                      schedules1[j]["oname2"],
+                      schedules1[j]["prof"],
+                      schedules1[j]["room"],
+                      schedules1[j]["time"],
+                      schedules1[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 1) {
+                  if (input02 == "기독교의이해") {
+                    make_card(
+                      schedules2[j]["kna"],
+                      schedules2[j]["hakbb"],
+                      schedules2[j]["hakjum"],
+                      schedules2[j]["oname2"],
+                      schedules2[j]["prof"],
+                      schedules2[j]["room"],
+                      schedules2[j]["time"],
+                      schedules2[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 1) {
+                  if (input02 == "글쓰기") {
+                    make_card(
+                      schedules3[j]["kna"],
+                      schedules3[j]["hakbb"],
+                      schedules3[j]["hakjum"],
+                      schedules3[j]["oname2"],
+                      schedules3[j]["prof"],
+                      schedules3[j]["room"],
+                      schedules3[j]["time"],
+                      schedules3[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 1) {
+                  if (input02 == "(~2019학번)대학영어") {
+                    make_card(
+                      schedules4[j]["kna"],
+                      schedules4[j]["hakbb"],
+                      schedules4[j]["hakjum"],
+                      schedules4[j]["oname2"],
+                      schedules4[j]["prof"],
+                      schedules4[j]["room"],
+                      schedules4[j]["time"],
+                      schedules4[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 2) {
+                  if (input02 == "문학과예술") {
+                    make_card(
+                      schedules5[j]["kna"],
+                      schedules5[j]["hakbb"],
+                      schedules5[j]["hakjum"],
+                      schedules5[j]["oname2"],
+                      schedules5[j]["prof"],
+                      schedules5[j]["room"],
+                      schedules5[j]["time"],
+                      schedules5[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 2) {
+                  if (input02 == "인간과역사") {
+                    make_card(
+                      schedules6[j]["kna"],
+                      schedules6[j]["hakbb"],
+                      schedules6[j]["hakjum"],
+                      schedules6[j]["oname2"],
+                      schedules6[j]["prof"],
+                      schedules6[j]["room"],
+                      schedules6[j]["time"],
+                      schedules6[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 2) {
+                  if (input02 == "언어와표현") {
+                    make_card(
+                      schedules7[j]["kna"],
+                      schedules7[j]["hakbb"],
+                      schedules7[j]["hakjum"],
+                      schedules7[j]["oname2"],
+                      schedules7[j]["prof"],
+                      schedules7[j]["room"],
+                      schedules7[j]["time"],
+                      schedules7[j]["notice"]
+                    );
+                  }
+                }
+                if (input01 == 2) {
+                  if (input02 == "가치와윤리") {
+                    make_card(
+                      schedules8[j]["kna"],
+                      schedules8[j]["hakbb"],
+                      schedules8[j]["hakjum"],
+                      schedules8[j]["oname2"],
+                      schedules8[j]["prof"],
+                      schedules8[j]["room"],
+                      schedules8[j]["time"],
+                      schedules8[j]["notice"]
+                    );
+                  }
+                }
+              }
+            } else {
+              alert("리뷰를 받아오지 못했습니다");
             }
           },
         });
       }
+
+      function make_card(kna, hakbb, hakjum, oname2, prof, room, time, notice) {
+        var temp_html =
+          "<tr>\
+                                <td>" +
+          kna +
+          "</td>\
+                                <td>" +
+          hakbb +
+          "</td>\
+                                <td>" +
+          hakjum +
+          "</td>\
+                                <td>" +
+          oname2 +
+          "</td>\
+                                <td>" +
+          prof +
+          "</td>\
+                                <td>" +
+          room +
+          "</td>\
+                                <td>" +
+          time +
+          "</td>\
+                                <td>" +
+          notice +
+          "</td>\
+                            </tr>";
+        $("#schedule-box").append(temp_html);
+      }
     </script>
   </head>
   <body>
-    <img class="logo" id="logo" src="시간표도우미로고.jpg">
-    <img class="go_timetable" id="go_timetable" onclick="q1()" src="시간표만들러가기.jpg">
-
-
+    <img
+      class="logo"
+      id="logo"
+      src="https://postfiles.pstatic.net/MjAyMDA0MTZfNjAg/MDAxNTg3MDM2OTU2NTgw.y2fbT-ZniyRiA4gJ2qknvbVcU9R5lZT_QTA4pwyOg5Ug.4iJJt5-Pz_bZuQBKlT0GdIpXBOksgOtHGVaj6ceRnEkg.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%8F%84%EC%9A%B0%EB%AF%B8%EB%A1%9C%EA%B3%A0.jpg?type=w773"
+    />
+    <img
+      class="go_timetable"
+      id="go_timetable"
+      src="https://postfiles.pstatic.net/MjAyMDA0MTZfMjY1/MDAxNTg3MDM2OTU2NTY4.D-gvrqriJ70OG-g8GrtdBpiv88bpUVA0M8r-Fp2Qa3Yg.zQv5gDrmgbEdg_k2Sz7AKreVMue8g6DMWK8MMrS0eNog.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%A7%8C%EB%93%A4%EB%9F%AC%EA%B0%80%EA%B8%B0.jpg?type=w773"
+    />
 
     <form class="form-inline">
-        <select class="custom-select my-1 mr-sm-2" id="select_box1" onchange="category_change(this)">
-          <option selected>전공/영역</option>
-          <option value="1">교양기초(2019학번~)</option>
-          <option value="2">대학교양(2019학번~)</option>
-          <option value="3">기초교육(2019학번~)</option>
-          <option value="4">공통기초(10~18학번)</option>
-          <option value="5">필수교양(10~18학번)</option>
-          <option value="6">선택교양(10~18학번)</option>
-          <option value="7">문과대학</option>
-          <option value="8">상경대학</option>
-          <option value="9">경영대학</option>
-          <option value="10">이과대학</option>
-          <option value="11">공과대학</option>
-          <option value="12">생명시스템대학</option>
-          <option value="13">신과대학</option>
-          <option value="14">사회과학대학</option>
-          <option value="15">음악대학</option>
-          <option value="16">생활과학대학</option>
-          <option value="17">교육과학대학</option>
-          <option value="18">언더우드국제대학</option>
-          <option value="19">약학대학</option>
-          <option value="20">글로벌인재대학</option>
-          <option value="21">연계전공</option>
-          <option value="22">국제캠퍼스(2019학번~)</option>
-          <option value="23">국제캠퍼스(~2018학번)</option>
-          <option value="24">ROTC</option>
-          <option value="25">교직과정</option>
-          <option value="26">의과대학</option>
-          <option value="27">치과대학</option>
-          <option value="28">간호대학</option>
-          <option value="29">평생교육사과정</option>
-          <option value="30">Study Abroad Course</option>
-        </select>
-        <select class="custom-select my-1 mr-sm-2" id="select_box2">
-            <option selected>전체</option>
-          </select>
-        <button type="submit" class="btn btn-primary my-1">Submit</button>
-      </form>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="select_box1"
+        onchange="category_change(this)"
+      >
+        <option selected>전공/영역</option>
+        <option value="1">교양기초(2019학번~)</option>
+        <option value="2">대학교양(2019학번~)</option>
+        <option value="3">기초교육(2019학번~)</option>
+        <option value="4">공통기초(10~18학번)</option>
+        <option value="5">필수교양(10~18학번)</option>
+        <option value="6">선택교양(10~18학번)</option>
+        <option value="7">문과대학</option>
+        <option value="8">상경대학</option>
+        <option value="9">경영대학</option>
+        <option value="10">이과대학</option>
+        <option value="11">공과대학</option>
+        <option value="12">생명시스템대학</option>
+        <option value="13">신과대학</option>
+        <option value="14">사회과학대학</option>
+        <option value="15">음악대학</option>
+        <option value="16">생활과학대학</option>
+        <option value="17">교육과학대학</option>
+        <option value="18">언더우드국제대학</option>
+        <option value="19">약학대학</option>
+        <option value="20">글로벌인재대학</option>
+        <option value="21">연계전공</option>
+        <option value="22">국제캠퍼스(2019학번~)</option>
+        <option value="23">국제캠퍼스(~2018학번)</option>
+        <option value="24">ROTC</option>
+        <option value="25">교직과정</option>
+        <option value="26">의과대학</option>
+        <option value="27">치과대학</option>
+        <option value="28">간호대학</option>
+        <option value="29">평생교육사과정</option>
+        <option value="30">Study Abroad Course</option>
+      </select>
+      <select class="custom-select my-1 mr-sm-2" id="select_box2">
+        <option selected>전체</option>
+      </select>
+      <button type="button" class="btn btn-primary my-1" onclick="listing()">
+        Submit
+      </button>
+    </form>
 
-
-      <button onclick="q2()">업데이트</button>
-      <ul id="names-q1"></ul>
-    </div>
+    <ul id="names-q1"></ul>
+    <table>
+      <tbody id="schedule-box">
+        <tr>
+          <td>교과목명</td>
+          <td>학정번호</td>
+          <td>학점</td>
+          <td>분류</td>
+          <td>담당교수</td>
+          <td>강의실</td>
+          <td>강의시간</td>
+          <td>유의사항</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
