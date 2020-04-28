@@ -67,6 +67,32 @@ def read_schedules():
     schedules = list(db.schedulelist.find({},{'_id':0}))
     return jsonify({'result': 'success', 'schedules': schedules})
 
+@app.route('/add', methods=['POST'])
+def add_schedules():
+    kna_receive = request.form['kna_give']
+    hakbb_receive = request.form['hakbb_give']
+    hakjum_receive = request.form['hakjum_give']
+    oname2_receive = request.form['oname2_give']
+    prof_receive = request.form['prof_give']
+    room_receive = request.form['room_give']
+    time_receive = request.form['time_give']
+    notice_receive = request.form['notice_give']
+
+    add = {
+        'kna': kna_receive,
+        'hakbb': hakbb_receive,
+        'hakjum': hakjum_receive,
+        'oname2': oname2_receive,
+        'prof': prof_receive,
+        'room': room_receive,
+        'time': time_receive,
+        'notice': notice_receive
+    }
+
+    db.adds.insert_one(add)
+    return jsonify({'result':'success', 'msg':'수업이 담겼습니다!'})
+
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
 

@@ -335,6 +335,7 @@
               var schedules = response["schedules"];
               var input01 = $("#select_box1").val();
               var input02 = $("#select_box2").val();
+              $("#schedule-box tr:not(:first)").remove();
 
               for (let i = 0; i < schedules.length; i++) {
                 if (
@@ -417,12 +418,222 @@
                   } else {
                     schedules8.push(schedules[i]);
                   }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "국가와사회"
+                ) {
+                  if (schedules9 == undefined) {
+                    var schedules9 = [];
+                    schedules9.push(schedules[i]);
+                  } else {
+                    schedules9.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "지역과세계"
+                ) {
+                  if (schedules10 == undefined) {
+                    var schedules10 = [];
+                    schedules10.push(schedules[i]);
+                  } else {
+                    schedules10.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "논리와수리"
+                ) {
+                  if (schedules11 == undefined) {
+                    var schedules11 = [];
+                    schedules11.push(schedules[i]);
+                  } else {
+                    schedules11.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "생명과환경"
+                ) {
+                  if (schedules12 == undefined) {
+                    var schedules12 = [];
+                    schedules12.push(schedules[i]);
+                  } else {
+                    schedules12.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "정보와기술"
+                ) {
+                  if (schedules13 == undefined) {
+                    var schedules13 = [];
+                    schedules13.push(schedules[i]);
+                  } else {
+                    schedules13.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100200H1" &&
+                  schedules[i]["oname2"] == "체육과건강"
+                ) {
+                  if (schedules14 == undefined) {
+                    var schedules14 = [];
+                    schedules14.push(schedules[i]);
+                  } else {
+                    schedules14.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100250H1" &&
+                  schedules[i]["oname2"] == "자율선택"
+                ) {
+                  if (schedules15 == undefined) {
+                    var schedules15 = [];
+                    schedules15.push(schedules[i]);
+                  } else {
+                    schedules15.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100300H1" &&
+                  schedules[i]["oname2"] == "채플"
+                ) {
+                  if (schedules16 == undefined) {
+                    var schedules16 = [];
+                    schedules16.push(schedules[i]);
+                  } else {
+                    schedules16.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100300H1" &&
+                  schedules[i]["oname2"] == "기독교의이해"
+                ) {
+                  if (schedules17 == undefined) {
+                    var schedules17 = [];
+                    schedules17.push(schedules[i]);
+                  } else {
+                    schedules17.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100300H1" &&
+                  schedules[i]["oname2"] == "대학영어"
+                ) {
+                  if (schedules18 == undefined) {
+                    var schedules18 = [];
+                    schedules18.push(schedules[i]);
+                  } else {
+                    schedules18.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100300H1" &&
+                  schedules[i]["oname2"] == "글쓰기"
+                ) {
+                  if (schedules19 == undefined) {
+                    var schedules19 = [];
+                    schedules19.push(schedules[i]);
+                  } else {
+                    schedules19.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "문학과예술"
+                ) {
+                  if (schedules20 == undefined) {
+                    var schedules20 = [];
+                    schedules20.push(schedules[i]);
+                  } else {
+                    schedules20.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "인간과역사"
+                ) {
+                  if (schedules21 == undefined) {
+                    var schedules21 = [];
+                    schedules21.push(schedules[i]);
+                  } else {
+                    schedules21.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "언어와표현"
+                ) {
+                  if (schedules22 == undefined) {
+                    var schedules22 = [];
+                    schedules22.push(schedules[i]);
+                  } else {
+                    schedules22.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "가치와윤리"
+                ) {
+                  if (schedules23 == undefined) {
+                    var schedules23 = [];
+                    schedules23.push(schedules[i]);
+                  } else {
+                    schedules23.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "국가와사회공동체"
+                ) {
+                  if (schedules24 == undefined) {
+                    var schedules24 = [];
+                    schedules24.push(schedules[i]);
+                  } else {
+                    schedules24.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "지역사회와세계"
+                ) {
+                  if (schedules25 == undefined) {
+                    var schedules25 = [];
+                    schedules25.push(schedules[i]);
+                  } else {
+                    schedules25.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "논리와수리"
+                ) {
+                  if (schedules26 == undefined) {
+                    var schedules26 = [];
+                    schedules26.push(schedules[i]);
+                  } else {
+                    schedules26.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "자연과우주"
+                ) {
+                  if (schedules27 == undefined) {
+                    var schedules27 = [];
+                    schedules27.push(schedules[i]);
+                  } else {
+                    schedules27.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "생명과환경"
+                ) {
+                  if (schedules28 == undefined) {
+                    var schedules28 = [];
+                    schedules28.push(schedules[i]);
+                  } else {
+                    schedules28.push(schedules[i]);
+                  }
+                } else if (
+                  schedules[i]["ocode1"] == "s1100400H1" &&
+                  schedules[i]["oname2"] == "소프트웨어"
+                ) {
+                  if (schedules29 == undefined) {
+                    var schedules29 = [];
+                    schedules29.push(schedules[i]);
+                  } else {
+                    schedules29.push(schedules[i]);
+                  }
                 }
               }
 
-              for (let j = 0; j < schedules.length; j++) {
-                if (input01 == 1) {
-                  if (input02 == "채플") {
+              if (input01 == 1) {
+                if (input02 == "채플") {
+                  for (let j = 0; j < schedules1.length; j++) {
                     make_card(
                       schedules1[j]["kna"],
                       schedules1[j]["hakbb"],
@@ -431,12 +642,15 @@
                       schedules1[j]["prof"],
                       schedules1[j]["room"],
                       schedules1[j]["time"],
-                      schedules1[j]["notice"]
+                      schedules1[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 1) {
-                  if (input02 == "기독교의이해") {
+              }
+              if (input01 == 1) {
+                if (input02 == "기독교의이해") {
+                  for (let j = 0; j < schedules2.length; j++) {
                     make_card(
                       schedules2[j]["kna"],
                       schedules2[j]["hakbb"],
@@ -445,12 +659,16 @@
                       schedules2[j]["prof"],
                       schedules2[j]["room"],
                       schedules2[j]["time"],
-                      schedules2[j]["notice"]
+                      schedules2[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 1) {
-                  if (input02 == "글쓰기") {
+              }
+
+              if (input01 == 1) {
+                if (input02 == "글쓰기") {
+                  for (let j = 0; j < schedules3.length; j++) {
                     make_card(
                       schedules3[j]["kna"],
                       schedules3[j]["hakbb"],
@@ -459,12 +677,16 @@
                       schedules3[j]["prof"],
                       schedules3[j]["room"],
                       schedules3[j]["time"],
-                      schedules3[j]["notice"]
+                      schedules3[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 1) {
-                  if (input02 == "(~2019학번)대학영어") {
+              }
+
+              if (input01 == 1) {
+                if (input02 == "(~2019학번)대학영어") {
+                  for (let j = 0; j < schedules4.length; j++) {
                     make_card(
                       schedules4[j]["kna"],
                       schedules4[j]["hakbb"],
@@ -473,12 +695,16 @@
                       schedules4[j]["prof"],
                       schedules4[j]["room"],
                       schedules4[j]["time"],
-                      schedules4[j]["notice"]
+                      schedules4[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 2) {
-                  if (input02 == "문학과예술") {
+              }
+
+              if (input01 == 2) {
+                if (input02 == "문학과예술") {
+                  for (let j = 0; j < schedules5.length; j++) {
                     make_card(
                       schedules5[j]["kna"],
                       schedules5[j]["hakbb"],
@@ -487,12 +713,16 @@
                       schedules5[j]["prof"],
                       schedules5[j]["room"],
                       schedules5[j]["time"],
-                      schedules5[j]["notice"]
+                      schedules5[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 2) {
-                  if (input02 == "인간과역사") {
+              }
+
+              if (input01 == 2) {
+                if (input02 == "인간과역사") {
+                  for (let j = 0; j < schedules6.length; j++) {
                     make_card(
                       schedules6[j]["kna"],
                       schedules6[j]["hakbb"],
@@ -501,12 +731,15 @@
                       schedules6[j]["prof"],
                       schedules6[j]["room"],
                       schedules6[j]["time"],
-                      schedules6[j]["notice"]
+                      schedules6[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 2) {
-                  if (input02 == "언어와표현") {
+              }
+              if (input01 == 2) {
+                if (input02 == "언어와표현") {
+                  for (let j = 0; j < schedules7.length; j++) {
                     make_card(
                       schedules7[j]["kna"],
                       schedules7[j]["hakbb"],
@@ -515,12 +748,16 @@
                       schedules7[j]["prof"],
                       schedules7[j]["room"],
                       schedules7[j]["time"],
-                      schedules7[j]["notice"]
+                      schedules7[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
-                if (input01 == 2) {
-                  if (input02 == "가치와윤리") {
+              }
+
+              if (input01 == 2) {
+                if (input02 == "가치와윤리") {
+                  for (let j = 0; j < schedules8.length; j++) {
                     make_card(
                       schedules8[j]["kna"],
                       schedules8[j]["hakbb"],
@@ -529,11 +766,372 @@
                       schedules8[j]["prof"],
                       schedules8[j]["room"],
                       schedules8[j]["time"],
-                      schedules8[j]["notice"]
+                      schedules8[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
                     );
                   }
                 }
               }
+              if (input01 == 2) {
+                if (input02 == "국가와사회") {
+                  for (let j = 0; j < schedules9.length; j++) {
+                    make_card(
+                      schedules9[j]["kna"],
+                      schedules9[j]["hakbb"],
+                      schedules9[j]["hakjum"],
+                      schedules9[j]["oname2"],
+                      schedules9[j]["prof"],
+                      schedules9[j]["room"],
+                      schedules9[j]["time"],
+                      schedules9[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 2) {
+                if (input02 == "지역과세계") {
+                  for (let j = 0; j < schedules10.length; j++) {
+                    make_card(
+                      schedules10[j]["kna"],
+                      schedules10[j]["hakbb"],
+                      schedules10[j]["hakjum"],
+                      schedules10[j]["oname2"],
+                      schedules10[j]["prof"],
+                      schedules10[j]["room"],
+                      schedules10[j]["time"],
+                      schedules10[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 2) {
+                if (input02 == "논리와수리") {
+                  for (let j = 0; j < schedules11.length; j++) {
+                    make_card(
+                      schedules11[j]["kna"],
+                      schedules11[j]["hakbb"],
+                      schedules11[j]["hakjum"],
+                      schedules11[j]["oname2"],
+                      schedules11[j]["prof"],
+                      schedules11[j]["room"],
+                      schedules11[j]["time"],
+                      schedules11[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 2) {
+                if (input02 == "생명과환경") {
+                  for (let j = 0; j < schedules12.length; j++) {
+                    make_card(
+                      schedules12[j]["kna"],
+                      schedules12[j]["hakbb"],
+                      schedules12[j]["hakjum"],
+                      schedules12[j]["oname2"],
+                      schedules12[j]["prof"],
+                      schedules12[j]["room"],
+                      schedules12[j]["time"],
+                      schedules12[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 2) {
+                if (input02 == "정보와기술") {
+                  for (let j = 0; j < schedules13.length; j++) {
+                    make_card(
+                      schedules13[j]["kna"],
+                      schedules13[j]["hakbb"],
+                      schedules13[j]["hakjum"],
+                      schedules13[j]["oname2"],
+                      schedules13[j]["prof"],
+                      schedules13[j]["room"],
+                      schedules13[j]["time"],
+                      schedules13[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 2) {
+                if (input02 == "체육과건강") {
+                  for (let j = 0; j < schedules14.length; j++) {
+                    make_card(
+                      schedules14[j]["kna"],
+                      schedules14[j]["hakbb"],
+                      schedules14[j]["hakjum"],
+                      schedules14[j]["oname2"],
+                      schedules14[j]["prof"],
+                      schedules14[j]["room"],
+                      schedules14[j]["time"],
+                      schedules14[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 3) {
+                if (input02 == "자율선택") {
+                  for (let j = 0; j < schedules15.length; j++) {
+                    make_card(
+                      schedules15[j]["kna"],
+                      schedules15[j]["hakbb"],
+                      schedules15[j]["hakjum"],
+                      schedules15[j]["oname2"],
+                      schedules15[j]["prof"],
+                      schedules15[j]["room"],
+                      schedules15[j]["time"],
+                      schedules15[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 4) {
+                if (input02 == "채플") {
+                  for (let j = 0; j < schedules16.length; j++) {
+                    make_card(
+                      schedules16[j]["kna"],
+                      schedules16[j]["hakbb"],
+                      schedules16[j]["hakjum"],
+                      schedules16[j]["oname2"],
+                      schedules16[j]["prof"],
+                      schedules16[j]["room"],
+                      schedules16[j]["time"],
+                      schedules16[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 4) {
+                if (input02 == "기독교의이해") {
+                  for (let j = 0; j < schedules17.length; j++) {
+                    make_card(
+                      schedules17[j]["kna"],
+                      schedules17[j]["hakbb"],
+                      schedules17[j]["hakjum"],
+                      schedules17[j]["oname2"],
+                      schedules17[j]["prof"],
+                      schedules17[j]["room"],
+                      schedules17[j]["time"],
+                      schedules17[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 4) {
+                if (input02 == "대학영어") {
+                  for (let j = 0; j < schedules18.length; j++) {
+                    make_card(
+                      schedules18[j]["kna"],
+                      schedules18[j]["hakbb"],
+                      schedules18[j]["hakjum"],
+                      schedules18[j]["oname2"],
+                      schedules18[j]["prof"],
+                      schedules18[j]["room"],
+                      schedules18[j]["time"],
+                      schedules18[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 4) {
+                if (input02 == "글쓰기") {
+                  for (let j = 0; j < schedules19.length; j++) {
+                    make_card(
+                      schedules19[j]["kna"],
+                      schedules19[j]["hakbb"],
+                      schedules19[j]["hakjum"],
+                      schedules19[j]["oname2"],
+                      schedules19[j]["prof"],
+                      schedules19[j]["room"],
+                      schedules19[j]["time"],
+                      schedules19[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "문학과예술") {
+                  for (let j = 0; j < schedules20.length; j++) {
+                    make_card(
+                      schedules20[j]["kna"],
+                      schedules20[j]["hakbb"],
+                      schedules20[j]["hakjum"],
+                      schedules20[j]["oname2"],
+                      schedules20[j]["prof"],
+                      schedules20[j]["room"],
+                      schedules20[j]["time"],
+                      schedules20[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "인간과역사") {
+                  for (let j = 0; j < schedules21.length; j++) {
+                    make_card(
+                      schedules21[j]["kna"],
+                      schedules21[j]["hakbb"],
+                      schedules21[j]["hakjum"],
+                      schedules21[j]["oname2"],
+                      schedules21[j]["prof"],
+                      schedules21[j]["room"],
+                      schedules21[j]["time"],
+                      schedules21[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "언어와표현") {
+                  for (let j = 0; j < schedules22.length; j++) {
+                    make_card(
+                      schedules22[j]["kna"],
+                      schedules22[j]["hakbb"],
+                      schedules22[j]["hakjum"],
+                      schedules22[j]["oname2"],
+                      schedules22[j]["prof"],
+                      schedules22[j]["room"],
+                      schedules22[j]["time"],
+                      schedules22[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "가치와윤리") {
+                  for (let j = 0; j < schedules23.length; j++) {
+                    make_card(
+                      schedules23[j]["kna"],
+                      schedules23[j]["hakbb"],
+                      schedules23[j]["hakjum"],
+                      schedules23[j]["oname2"],
+                      schedules23[j]["prof"],
+                      schedules23[j]["room"],
+                      schedules23[j]["time"],
+                      schedules23[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "국가와사회공동체") {
+                  for (let j = 0; j < schedules24.length; j++) {
+                    make_card(
+                      schedules24[j]["kna"],
+                      schedules24[j]["hakbb"],
+                      schedules24[j]["hakjum"],
+                      schedules24[j]["oname2"],
+                      schedules24[j]["prof"],
+                      schedules24[j]["room"],
+                      schedules24[j]["time"],
+                      schedules24[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "지역사회와세계") {
+                  for (let j = 0; j < schedules25.length; j++) {
+                    make_card(
+                      schedules25[j]["kna"],
+                      schedules25[j]["hakbb"],
+                      schedules25[j]["hakjum"],
+                      schedules25[j]["oname2"],
+                      schedules25[j]["prof"],
+                      schedules25[j]["room"],
+                      schedules25[j]["time"],
+                      schedules25[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "논리와수리") {
+                  for (let j = 0; j < schedules26.length; j++) {
+                    make_card(
+                      schedules26[j]["kna"],
+                      schedules26[j]["hakbb"],
+                      schedules26[j]["hakjum"],
+                      schedules26[j]["oname2"],
+                      schedules26[j]["prof"],
+                      schedules26[j]["room"],
+                      schedules26[j]["time"],
+                      schedules26[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "자연과우주") {
+                  for (let j = 0; j < schedules27.length; j++) {
+                    make_card(
+                      schedules27[j]["kna"],
+                      schedules27[j]["hakbb"],
+                      schedules27[j]["hakjum"],
+                      schedules27[j]["oname2"],
+                      schedules27[j]["prof"],
+                      schedules27[j]["room"],
+                      schedules27[j]["time"],
+                      schedules27[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "생명과환경") {
+                  for (let j = 0; j < schedules28.length; j++) {
+                    make_card(
+                      schedules28[j]["kna"],
+                      schedules28[j]["hakbb"],
+                      schedules28[j]["hakjum"],
+                      schedules28[j]["oname2"],
+                      schedules28[j]["prof"],
+                      schedules28[j]["room"],
+                      schedules28[j]["time"],
+                      schedules28[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+              if (input01 == 5) {
+                if (input02 == "소프트웨어") {
+                  for (let j = 0; j < schedules29.length; j++) {
+                    make_card(
+                      schedules29[j]["kna"],
+                      schedules29[j]["hakbb"],
+                      schedules29[j]["hakjum"],
+                      schedules29[j]["oname2"],
+                      schedules29[j]["prof"],
+                      schedules29[j]["room"],
+                      schedules29[j]["time"],
+                      schedules29[j]["notice"],
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                    );
+                  }
+                }
+              }
+
+              var tab = document.getElementById("schedule-box");
+              console.log(tab.rows.length);
             } else {
               alert("리뷰를 받아오지 못했습니다");
             }
@@ -541,7 +1139,17 @@
         });
       }
 
-      function make_card(kna, hakbb, hakjum, oname2, prof, room, time, notice) {
+      function make_card(
+        kna,
+        hakbb,
+        hakjum,
+        oname2,
+        prof,
+        room,
+        time,
+        notice,
+        button1
+      ) {
         var temp_html =
           "<tr>\
                                 <td>" +
@@ -568,8 +1176,56 @@
                                 <td>" +
           notice +
           "</td>\
+                                <td>" +
+          button1 +
+          "</td>\
                             </tr>";
-        $("#schedule-box").append(temp_html);
+        $("#dynamicTbody").append(temp_html);
+      }
+      function del_table() {
+        var lo_table = document.getElementById("schedule-box");
+        var row_index = lo_table.rows.length - 1; // 테이블(TR) row 개수
+        if (row_index > 1) lo_table.deleteRow(row_index);
+      }
+
+      function addbtn() {
+        $(".addbutton").click(function () {
+          var str = "";
+          var tdArr = new Array();
+          var addbutton = $(this);
+          var tr = addbutton.parent().parent();
+          var td = tr.children();
+          var kna1 = td.eq(0).text();
+          var hakbb1 = td.eq(1).text();
+          var hakjum1 = td.eq(2).text();
+          var oname21 = td.eq(3).text();
+          var prof1 = td.eq(4).text();
+          var room1 = td.eq(5).text();
+          var time1 = td.eq(6).text();
+          var notice1 = td.eq(7).text();
+          console.log(kna1);
+          console.log("클릭한 row의 모든 데이터:" + tr.text());
+
+          $.ajax({
+            type: "POST",
+            url: "/add",
+            data: {
+              kna_give: kna1,
+              hakbb_give: hakbb1,
+              hakjum_give: hakjum1,
+              oname2_give: oname21,
+              prof_give: prof1,
+              room_give: room1,
+              time_give: time1,
+              notice_give: notice1,
+            },
+            success: function (response) {
+              if (response["result"] == "success") {
+                alert(response["담겼습니다!"]);
+              }
+            },
+          });
+        });
       }
     </script>
   </head>
@@ -632,19 +1288,26 @@
     </form>
 
     <ul id="names-q1"></ul>
-    <table>
-      <tbody id="schedule-box">
+    <table
+      id="schedule-box"
+      class="schedule-box"
+      border="1"
+      style="width: 80%;"
+    >
+      <thead>
         <tr>
-          <td>교과목명</td>
-          <td>학정번호</td>
-          <td>학점</td>
-          <td>분류</td>
-          <td>담당교수</td>
-          <td>강의실</td>
-          <td>강의시간</td>
-          <td>유의사항</td>
+          <th>교과목명</th>
+          <th>학정번호</th>
+          <th>학점</th>
+          <th>분류</th>
+          <th>담당교수</th>
+          <th>강의실</th>
+          <th>강의시간</th>
+          <th>유의사항</th>
+          <th>담으시겠습니까?</th>
         </tr>
-      </tbody>
+      </thead>
+      <tbody id="dynamicTbody"></tbody>
     </table>
   </body>
 </html>
