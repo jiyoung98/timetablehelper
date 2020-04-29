@@ -67,7 +67,12 @@ def read_schedules():
     schedules = list(db.schedulelist.find({},{'_id':0}))
     return jsonify({'result': 'success', 'schedules': schedules})
 
-@app.route('/add', methods=['POST'])
+@app.route('/api/add', methods=['GET'])
+def now_schedules():
+    adds = list(db.adds.find({},{'_id':0}))
+    return jsonify({'result': 'success', 'adds': adds})
+
+@app.route('/api/add', methods=['POST'])
 def add_schedules():
     kna_receive = request.form['kna_give']
     hakbb_receive = request.form['hakbb_give']
@@ -90,8 +95,14 @@ def add_schedules():
     }
 
     db.adds.insert_one(add)
+    # db.adds.remove({})
     return jsonify({'result':'success', 'msg':'수업이 담겼습니다!'})
 
+@app.route('/api/delete', methods=['POST'])
+def delete_schedules():
+    kna2_receive = request.form['kna2_give']
+    db.adds.delete_one({'kna':kna2_receive})
+    return jsonify({'result': 'success'})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

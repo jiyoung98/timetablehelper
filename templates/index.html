@@ -49,7 +49,7 @@
         margin: 0 auto;
       }
       .go_timetable {
-        width: 500px;
+        width: 300px;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -58,13 +58,63 @@
         width: 300px;
         height: auto;
       }
+      .form-inline {
+        width: 50%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      .schedule-box {
+        width: 60%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+      }
+      .timetable {
+        text-align: center;
+        width: 60%;
+        height: auto;
+        margin: auto;
+      }
+      .addmsgalert {
+        text-align: center;
+        width: 60%;
+        height: auto;
+        margin: auto;
+      }
     </style>
 
     <script>
-      function q1() {
-        $("#go_timetable").hide();
-        $("").show();
-      }
+      window.onload = function () {
+        $("#timetable").hide();
+        $("#loadingimg").hide();
+      };
+
+      $(document).ready(function () {
+        $.ajax({
+          type: "GET",
+          url: "/api/add",
+          data: {},
+          success: function (response) {
+            if (response["result"] == "success") {
+              let adds = response["adds"];
+              for (let i = 0; i < adds.length; i++) {
+                make_card2(
+                  adds[i]["kna"],
+                  adds[i]["prof"],
+                  adds[i]["time"],
+                  '<button type="button" class="btn btn-primary my-1 deletebtn" onclick="deletebtn(this)">삭제</button>'
+                );
+              }
+              if (adds.length>=1) {
+                $("#tablemessage").hide();
+              }
+            } else {
+              alert("현재 담은 내역을 받아오지 못했습니다!");
+            }
+          },
+        });
+      });
 
       function category_change(e) {
         var select_box2_1 = [
@@ -643,7 +693,7 @@
                       schedules1[j]["room"],
                       schedules1[j]["time"],
                       schedules1[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -660,7 +710,7 @@
                       schedules2[j]["room"],
                       schedules2[j]["time"],
                       schedules2[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -678,7 +728,7 @@
                       schedules3[j]["room"],
                       schedules3[j]["time"],
                       schedules3[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -696,7 +746,7 @@
                       schedules4[j]["room"],
                       schedules4[j]["time"],
                       schedules4[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -714,7 +764,7 @@
                       schedules5[j]["room"],
                       schedules5[j]["time"],
                       schedules5[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -732,7 +782,7 @@
                       schedules6[j]["room"],
                       schedules6[j]["time"],
                       schedules6[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -749,7 +799,7 @@
                       schedules7[j]["room"],
                       schedules7[j]["time"],
                       schedules7[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -767,7 +817,7 @@
                       schedules8[j]["room"],
                       schedules8[j]["time"],
                       schedules8[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -784,7 +834,7 @@
                       schedules9[j]["room"],
                       schedules9[j]["time"],
                       schedules9[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -801,7 +851,7 @@
                       schedules10[j]["room"],
                       schedules10[j]["time"],
                       schedules10[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -818,7 +868,7 @@
                       schedules11[j]["room"],
                       schedules11[j]["time"],
                       schedules11[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -835,7 +885,7 @@
                       schedules12[j]["room"],
                       schedules12[j]["time"],
                       schedules12[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -852,7 +902,7 @@
                       schedules13[j]["room"],
                       schedules13[j]["time"],
                       schedules13[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -869,7 +919,7 @@
                       schedules14[j]["room"],
                       schedules14[j]["time"],
                       schedules14[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -886,7 +936,7 @@
                       schedules15[j]["room"],
                       schedules15[j]["time"],
                       schedules15[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -903,7 +953,7 @@
                       schedules16[j]["room"],
                       schedules16[j]["time"],
                       schedules16[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -920,7 +970,7 @@
                       schedules17[j]["room"],
                       schedules17[j]["time"],
                       schedules17[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -937,7 +987,7 @@
                       schedules18[j]["room"],
                       schedules18[j]["time"],
                       schedules18[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -954,7 +1004,7 @@
                       schedules19[j]["room"],
                       schedules19[j]["time"],
                       schedules19[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -971,7 +1021,7 @@
                       schedules20[j]["room"],
                       schedules20[j]["time"],
                       schedules20[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -988,7 +1038,7 @@
                       schedules21[j]["room"],
                       schedules21[j]["time"],
                       schedules21[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1005,7 +1055,7 @@
                       schedules22[j]["room"],
                       schedules22[j]["time"],
                       schedules22[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1022,7 +1072,7 @@
                       schedules23[j]["room"],
                       schedules23[j]["time"],
                       schedules23[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1039,7 +1089,7 @@
                       schedules24[j]["room"],
                       schedules24[j]["time"],
                       schedules24[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1056,7 +1106,7 @@
                       schedules25[j]["room"],
                       schedules25[j]["time"],
                       schedules25[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1073,7 +1123,7 @@
                       schedules26[j]["room"],
                       schedules26[j]["time"],
                       schedules26[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1090,7 +1140,7 @@
                       schedules27[j]["room"],
                       schedules27[j]["time"],
                       schedules27[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1107,7 +1157,7 @@
                       schedules28[j]["room"],
                       schedules28[j]["time"],
                       schedules28[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1124,7 +1174,7 @@
                       schedules29[j]["room"],
                       schedules29[j]["time"],
                       schedules29[j]["notice"],
-                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn()">담기</button>'
+                      '<button type="button" class="btn btn-primary my-1 addbutton" onclick="addbtn(this)">담기</button>'
                     );
                   }
                 }
@@ -1182,49 +1232,125 @@
                             </tr>";
         $("#dynamicTbody").append(temp_html);
       }
+
+      function make_card2(kna, prof, time, button2) {
+        var addmsg =
+          "<tr>\
+                                <td>" +
+          kna +
+          "</td>\
+                                <td>" +
+          prof +
+          "</td>\
+                                <td>" +
+          time +
+          "</td>\
+                                <td>" +
+          button2 +
+          "</td>\
+                            </tr>";
+        $("#addmsgalert").append(addmsg);
+      }
+
       function del_table() {
         var lo_table = document.getElementById("schedule-box");
         var row_index = lo_table.rows.length - 1; // 테이블(TR) row 개수
         if (row_index > 1) lo_table.deleteRow(row_index);
       }
 
-      function addbtn() {
-        $(".addbutton").click(function () {
-          var str = "";
-          var tdArr = new Array();
-          var addbutton = $(this);
-          var tr = addbutton.parent().parent();
-          var td = tr.children();
-          var kna1 = td.eq(0).text();
-          var hakbb1 = td.eq(1).text();
-          var hakjum1 = td.eq(2).text();
-          var oname21 = td.eq(3).text();
-          var prof1 = td.eq(4).text();
-          var room1 = td.eq(5).text();
-          var time1 = td.eq(6).text();
-          var notice1 = td.eq(7).text();
-          console.log(kna1);
-          console.log("클릭한 row의 모든 데이터:" + tr.text());
+      function addbtn(me) {
+        var str = "";
+        var tdArr = new Array();
+        var addbutton = $(me);
+        var tr = addbutton.parent().parent();
+        var td = tr.children();
+        var kna1 = td.eq(0).text();
+        var hakbb1 = td.eq(1).text();
+        var hakjum1 = td.eq(2).text();
+        var oname21 = td.eq(3).text();
+        var prof1 = td.eq(4).text();
+        var room1 = td.eq(5).text();
+        var time1 = td.eq(6).text();
+        var notice1 = td.eq(7).text();
+        console.log(kna1);
+        console.log("클릭한 row의 모든 데이터:" + tr.text());
 
-          $.ajax({
-            type: "POST",
-            url: "/add",
-            data: {
-              kna_give: kna1,
-              hakbb_give: hakbb1,
-              hakjum_give: hakjum1,
-              oname2_give: oname21,
-              prof_give: prof1,
-              room_give: room1,
-              time_give: time1,
-              notice_give: notice1,
-            },
-            success: function (response) {
-              if (response["result"] == "success") {
-                alert(response["담겼습니다!"]);
-              }
-            },
-          });
+        $.ajax({
+          type: "POST",
+          url: "/api/add",
+          data: {
+            kna_give: kna1,
+            hakbb_give: hakbb1,
+            hakjum_give: hakjum1,
+            oname2_give: oname21,
+            prof_give: prof1,
+            room_give: room1,
+            time_give: time1,
+            notice_give: notice1,
+          },
+          success: function (response) {
+            if (response["result"] == "success") {
+              alert("담겼습니다!");
+              window.location.reload();
+            }
+          },
+        });
+
+        // $.ajax({
+        //   type: "GET",
+        //   url: "/add",
+        //   data: {},
+        //   success: function (response) {
+        //     if (response["result"] == "success") {
+        //       let adds = response["adds"];
+        //       for (let i = 0; i < adds.length; i++) {
+        //         make_card2(
+        //           adds[i]["prof"],
+        //           adds[i]["time"],
+        //           adds[i]["kna"],
+        //           '<button type="button" class="btn btn-primary my-1 deletebtn" onclick="deletebtn()">삭제</button>'
+        //         );
+        //       }
+        //     } else {
+        //       alert("리뷰를 받아오지 못했습니다");
+        //     }
+        //   },
+        // });
+      }
+
+      function deletebtn(me) {
+        var str2 = "";
+        var tdArr2 = new Array();
+        var deletebutton = $(me);
+        var tr2 = deletebutton.parent().parent();
+        var td2 = tr2.children();
+        console.log(td2.text());
+        var kna2 = td2.eq(0).text();
+        console.log(kna2);
+
+        $.ajax({
+          type: "POST",
+          url: "/api/delete",
+          data: { kna2_give: kna2 },
+          success: function (response) {
+            if (response["result"] == "success") {
+              alert("삭제 완료!");
+              window.location.reload();
+            }
+          },
+        });
+      }
+
+      function next() {
+        $("#go_timetable").hide();
+        $("#form-inline").hide();
+        $("#schedule-box").hide();
+        $("#addmsgalert").hide();
+        $("#loadingimg").show();
+        $("#loadingimg").animate({top:100,left:200},
+        function () {
+          $("#loadingimg").hide();
+          $("#timetable").show();
         });
       }
     </script>
@@ -1235,15 +1361,129 @@
       id="logo"
       src="https://postfiles.pstatic.net/MjAyMDA0MTZfNjAg/MDAxNTg3MDM2OTU2NTgw.y2fbT-ZniyRiA4gJ2qknvbVcU9R5lZT_QTA4pwyOg5Ug.4iJJt5-Pz_bZuQBKlT0GdIpXBOksgOtHGVaj6ceRnEkg.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%8F%84%EC%9A%B0%EB%AF%B8%EB%A1%9C%EA%B3%A0.jpg?type=w773"
     />
-    <img
-      class="go_timetable"
-      id="go_timetable"
-      src="https://postfiles.pstatic.net/MjAyMDA0MTZfMjY1/MDAxNTg3MDM2OTU2NTY4.D-gvrqriJ70OG-g8GrtdBpiv88bpUVA0M8r-Fp2Qa3Yg.zQv5gDrmgbEdg_k2Sz7AKreVMue8g6DMWK8MMrS0eNog.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%A7%8C%EB%93%A4%EB%9F%AC%EA%B0%80%EA%B8%B0.jpg?type=w773"
-    />
 
-    <form class="form-inline">
+    <center class="loadingimg" id="loadingimg">
+      <div class="loadingio-spinner-spinner-kkxllf7ibmc">
+        <div class="ldio-1ndwp1mgg9p">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </center>
+    <style type="text/css">
+      @keyframes ldio-1ndwp1mgg9p {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .ldio-1ndwp1mgg9p div {
+        left: 94px;
+        top: 48px;
+        position: absolute;
+        animation: ldio-1ndwp1mgg9p linear 1s infinite;
+        background: #93dbe9;
+        width: 12px;
+        height: 24px;
+        border-radius: 6px / 12px;
+        transform-origin: 6px 52px;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -0.9166666666666666s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -0.8333333333333334s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.75s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.6666666666666666s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.5833333333333334s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.5s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.4166666666666667s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.3333333333333333s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.25s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.16666666666666666s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.08333333333333333s;
+        background: #93dbe9;
+      }
+      .ldio-1ndwp1mgg9p div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+        background: #93dbe9;
+      }
+      .loadingio-spinner-spinner-kkxllf7ibmc {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        overflow: hidden;
+        background: white;
+      }
+      .ldio-1ndwp1mgg9p {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0; /* see note above */
+      }
+      .ldio-1ndwp1mgg9p div {
+        box-sizing: content-box;
+      }
+      /* generated by https://loading.io/ */
+    </style>
+
+    <form class="form-inline" id="form-inline">
       <select
-        class="custom-select my-1 mr-sm-2"
+        class="custom-select my-1 mr-sm-2 select_box1"
         id="select_box1"
         onchange="category_change(this)"
       >
@@ -1308,6 +1548,75 @@
         </tr>
       </thead>
       <tbody id="dynamicTbody"></tbody>
+      <tr>
+        <td colspan="9">수업을 검색해주세요!</td>
+      </tr>
+    </table>
+    <br />
+    <table id="addmsgalert" class="addmsgalert" border="1" style="width: 80%;">
+      <thead>
+        <tr>
+          <th>교과목명</th>
+          <th>담당교수</th>
+          <th>강의시간</th>
+          <th>삭제하시겠습니까?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4" class="tablemessage" id="tablemessage">아직 담은 수업 목록이 없어요!</td>
+        </tr>
+      </tbody>
+    </table>
+    <img
+      class="go_timetable"
+      id="go_timetable"
+      onclick="next()"
+      src="https://postfiles.pstatic.net/MjAyMDA0MTZfMjY1/MDAxNTg3MDM2OTU2NTY4.D-gvrqriJ70OG-g8GrtdBpiv88bpUVA0M8r-Fp2Qa3Yg.zQv5gDrmgbEdg_k2Sz7AKreVMue8g6DMWK8MMrS0eNog.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%A7%8C%EB%93%A4%EB%9F%AC%EA%B0%80%EA%B8%B0.jpg?type=w773"
+    />
+    <table id="timetable" class="timetable" border="1">
+      <thead>
+        <tr>
+          <th></th>
+          <th>월</th>
+          <th>화</th>
+          <th>수</th>
+          <th>목</th>
+          <th>금</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1교시(09:00~09:50)</th>
+        </tr>
+        <tr>
+          <th>2교시(10:00~10:50)</th>
+        </tr>
+        <tr>
+          <th>3교시(11:00~11:50)</th>
+        </tr>
+        <tr>
+          <th>4교시(12:00~12:50)</th>
+        </tr>
+        <tr>
+          <th>5교시(13:00~13:50)</th>
+        </tr>
+        <tr>
+          <th>6교시(14:00~14:50)</th>
+        </tr>
+        <tr>
+          <th>7교시(15:00~15:50)</th>
+        </tr>
+        <tr>
+          <th>8교시(16:00~16:50)</th>
+        </tr>
+        <tr>
+          <th>9교시(17:00~17:50)</th>
+        </tr>
+        <tr>
+          <th>10교시(18:00~18:50)</th>
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>
