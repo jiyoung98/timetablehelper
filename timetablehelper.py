@@ -104,6 +104,11 @@ def delete_schedules():
     db.adds.delete_one({'kna':kna2_receive})
     return jsonify({'result': 'success'})
 
+@app.route('/alldelete', methods=['POST'])
+def all_delete_schedules():
+    db.adds.remove({})
+    return jsonify({'result': 'success'})
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
 

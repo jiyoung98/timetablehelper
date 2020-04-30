@@ -82,12 +82,19 @@
         height: auto;
         margin: auto;
       }
+      .exitbtn {
+        width: 150px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
     </style>
 
     <script>
       window.onload = function () {
         $("#timetable").hide();
         $("#loadingimg").hide();
+        $("#exitbtn").hide();
       };
 
       $(document).ready(function () {
@@ -111,21 +118,36 @@
                   var tag1 =
                     adds[i]["kna"] + "<br>" + adds[i]["prof"] + "교수님";
                   document.getElementById("mon1").innerHTML = tag1;
+                  document
+                    .getElementById("mon1")
+                    // .setAttribute("style", "background-color:steelblue");
                 }
                 if (time3_1.includes("월2")) {
                   var tag1 =
                     adds[i]["kna"] + "<br>" + adds[i]["prof"] + "교수님";
                   document.getElementById("mon2").innerHTML = tag1;
+
+                  document
+                    .getElementById("mon2")
+                    // .setAttribute("style", "background-color:steelblue");
                 }
                 if (time3_1.includes("월3")) {
                   var tag1 =
                     adds[i]["kna"] + "<br>" + adds[i]["prof"] + "교수님";
                   document.getElementById("mon3").innerHTML = tag1;
+
+                  document
+                    .getElementById("mon3")
+                    // .setAttribute("style", "background-color:powderblue");
                 }
                 if (time3_1.includes("월4")) {
                   var tag1 =
                     adds[i]["kna"] + "<br>" + adds[i]["prof"] + "교수님";
                   document.getElementById("mon4").innerHTML = tag1;
+
+                  document
+                    .getElementById("mon4")
+                    // .setAttribute("style", "background-color:powderblue");
                 }
                 if (time3_1.includes("월5")) {
                   var tag1 =
@@ -358,6 +380,7 @@
                   document.getElementById("fri10").innerHTML = tag1;
                 }
               }
+
               if (adds.length >= 1) {
                 $("#tablemessage").hide();
               }
@@ -1620,6 +1643,21 @@
         $("#loadingimg").animate({ top: 100, left: 200 }, function () {
           $("#loadingimg").hide();
           $("#timetable").show();
+          $("#exitbtn").show();
+        });
+      }
+
+      function exit() {
+        $.ajax({
+          type: "POST",
+          url: "/alldelete",
+          data: {},
+          success: function (response) {
+            if (response["result"] == "success") {
+              alert("이번 학기도 화이팅!");
+              window.location.reload();
+            }
+          },
         });
       }
     </script>
@@ -1628,7 +1666,8 @@
     <img
       class="logo"
       id="logo"
-      src="https://postfiles.pstatic.net/MjAyMDA0MzBfMTAx/MDAxNTg4MjM2NjE3MjQ5.hLV-BON3mU2pSKoaq9v7gy7xryDP_a7xVXGkugxzsLcg.nF4rmiobJU0AGILkRAX8KDPPZCD1DL6wrwoRzGOVz38g.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%8F%84%EC%9A%B0%EB%AF%B8%EB%A1%9C%EA%B3%A0.jpg?type=w773"/>
+      src="https://postfiles.pstatic.net/MjAyMDA0MzBfMTAx/MDAxNTg4MjM2NjE3MjQ5.hLV-BON3mU2pSKoaq9v7gy7xryDP_a7xVXGkugxzsLcg.nF4rmiobJU0AGILkRAX8KDPPZCD1DL6wrwoRzGOVz38g.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%8F%84%EC%9A%B0%EB%AF%B8%EB%A1%9C%EA%B3%A0.jpg?type=w773"
+    />
 
     <center class="loadingimg" id="loadingimg">
       <div class="loadingio-spinner-spinner-kkxllf7ibmc">
@@ -1842,7 +1881,8 @@
       class="go_timetable"
       id="go_timetable"
       onclick="next()"
-      src="https://postfiles.pstatic.net/MjAyMDA0MTZfMjY1/MDAxNTg3MDM2OTU2NTY4.D-gvrqriJ70OG-g8GrtdBpiv88bpUVA0M8r-Fp2Qa3Yg.zQv5gDrmgbEdg_k2Sz7AKreVMue8g6DMWK8MMrS0eNog.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%A7%8C%EB%93%A4%EB%9F%AC%EA%B0%80%EA%B8%B0.jpg?type=w773"/>
+      src="https://postfiles.pstatic.net/MjAyMDA0MTZfMjY1/MDAxNTg3MDM2OTU2NTY4.D-gvrqriJ70OG-g8GrtdBpiv88bpUVA0M8r-Fp2Qa3Yg.zQv5gDrmgbEdg_k2Sz7AKreVMue8g6DMWK8MMrS0eNog.JPEG.jiyoung15105/%EC%8B%9C%EA%B0%84%ED%91%9C%EB%A7%8C%EB%93%A4%EB%9F%AC%EA%B0%80%EA%B8%B0.jpg?type=w773"
+    />
     <table id="timetable" class="timetable" border="1">
       <thead>
         <tr>
@@ -1937,5 +1977,13 @@
         </tr>
       </tbody>
     </table>
+    <button
+      type="button"
+      class="btn btn-primary btn-lg exitbtn"
+      id="exitbtn"
+      onclick="exit()"
+    >
+      확인 완료!
+    </button>
   </body>
 </html>
